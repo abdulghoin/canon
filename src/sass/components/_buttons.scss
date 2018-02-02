@@ -1,0 +1,27 @@
+.btn-red {
+  background-color: $main-color;
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: $light-font;
+  font-weight: bold;
+  cursor: pointer;
+  @include prefix(transition, 0.4s);
+
+  &:hover {
+    color: $dark-font;
+  }
+}
+
+.btn-white {
+  background-color: $light-font;
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: $main-color;
+  font-weight: bold;
+  cursor: pointer;
+  @include prefix(transition, 0.4s);
+
+  &:hover {
+    color: $dark-font;
+  }
+}

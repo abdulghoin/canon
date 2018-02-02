@@ -1,0 +1,213 @@
+@import "../carousel/variables";
+@import "../carousel/mixins/breakpoints";
+@import "../carousel/mixins/animation";
+@import "../carousel/mixins/utils";
+
+// buttons, form inputs, etc...
+@import "../carousel/carousel";
+
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+
+#home {
+  .banner {
+
+    .carousel-status {
+      display: none !important;
+    }
+
+    .control-dots {
+      bottom: 25% !important;
+
+      .dot {
+        width: 15px;
+        height: 15px;
+        border: 1px solid $main-color;
+
+        &.selected {
+          background: $main-color;
+        }
+      }
+    }
+
+    .control-arrow {
+      display: none;
+    }
+
+    .content {
+      z-index: 2;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      font-size: 150%;
+      background-color: transparent;
+      color: $light-font;
+      @include prefix(transform, translate(-50%));
+
+      h1, h2 {
+        font-family: Montserrat, sans-serif;
+        line-height: 50px;
+        text-shadow: 2px 2px 4px #000;
+      }
+
+      .btn {
+        margin-top: 20px;
+        padding: 15px 40px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .container {
+    margin-top: -10%;
+
+    .new {
+      .col {
+        .item {
+          position: relative;
+          display: inline-block;
+          padding: 25px 15px;
+          @extend %box;
+
+          img {
+            width: 100%;
+            margin-bottom: 15px;
+          }
+        }
+
+        &.col-sm-12 {
+          margin-bottom: 25px;
+        }
+      }
+    }
+
+    .promotion, .article, .event {
+      margin-top: 40px;
+
+      .title {
+        margin-bottom: 20px;
+
+        &.mobile {
+          margin-bottom: 0;
+          margin-top: 50px
+        }
+      }
+
+      .content {
+        position: relative;
+        @extend %box;
+
+        &.desktop {
+          @extend %flex;
+          @include prefix(align-items, center);
+          @include prefix(justify-content, space-between);
+        }
+
+        &.mobile {
+          margin-top: 60px;
+          padding: 20px 0;
+        }
+
+        img, .desc {
+          width: 46%;
+          margin: 15px 2%;
+
+          &.mobile {
+            width: 94%;
+            margin: 15px 3%;
+          }
+        }
+
+        p {
+          margin: 20px 0;
+        }
+
+        .btn {
+          display: inline-block;
+          padding: 10px 20px;
+        }
+      }
+
+      .btn-white {
+        margin-top: 20px;
+        display: inline-block;
+        border: 1px solid $grey;
+        padding: 10px 20px;
+
+        i {
+          color: $grey;
+        }
+      }
+
+      .row {
+        margin-top: 30px;
+
+        .col {
+          .content-nd {
+            position: relative;
+            @extend %box;
+            height: 400px;
+
+            .img {
+              overflow-y: hidden;
+              img {
+                border-radius: 10px 10px 0 0;
+                width: 100%;
+              }
+            }
+
+            .desc {
+              padding: 10px;
+            }
+          }
+
+          &.col-md-8 {
+            .img {
+              height: 45%;
+            }
+          }
+
+          &.col-md-4 {
+            .img {
+              height: 60%;
+            }
+          }
+
+          &.col-sm-12 {
+            display: inline-block;
+            height: auto;
+            margin-bottom: 20px;
+
+            .img {
+              height: 50%;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .event {
+      .content {
+
+        &.mobile {
+          padding-top: 0;
+        }
+
+        img {
+          width: 50%;
+          margin: 0;
+          border-radius: 10px 0 0 10px;
+
+          &.mobile {
+            width: 100%;
+            margin: 0;
+            border-radius: 10px 10px 0 0;
+          }
+        }
+      }
+    }
+  }
+}

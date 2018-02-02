@@ -1,0 +1,245 @@
+
+#LayOut {
+  .navbar {
+    padding: 0;
+    background-color: $main-bg;
+    color: $dark-font;
+
+    .header {
+      height: $header-height;
+      @extend %flex;
+      @include prefix(align-items, center);
+      @include prefix(justify-content, space-between);
+
+      .brand {
+        font-size: 30px;
+        color: $dark-font;
+        font-weight: bold;
+
+        img {
+          width: auto;
+          height: $logo-height;
+        }
+      }
+
+      ul {
+        li {
+          float: left;
+          display: inline-block;
+
+          a {
+            font-size: 14px;
+            font-weight: bold;
+            @include prefix(transition, 0.4s);
+          }
+        }
+
+        &.main-nav {
+          li {
+            a {
+              padding: 5px 12px;
+              color: $dark-font;
+
+              &:hover, &.active {
+                color: $main-color;
+              }
+            }
+          }
+        }
+
+        &.right-nav {
+          li {
+            border-left: 2px solid $dark-font;
+            a {
+              padding: 5px;
+              color: $grey;
+
+              &.active {
+                color: $main-color;
+              }
+
+              &:hover {
+                color: $dark-font;
+              }
+            }
+
+            &:first-of-type {
+              border-left: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 2px solid $grey-light;
+
+    .col {
+      .title {
+        color: $grey-light;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .detail {
+        list-style-type: none;
+
+        li {
+          a {
+            color: $dark-font;
+            font-weight: bold;
+            padding: 3px 0;
+            display: inline-block;
+            font-size: 12px;
+            @include prefix(transition, 0.4s);
+
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+      }
+
+      &.col-sm-12 {
+        text-align: center;
+
+        .title {
+          background-color: $light-font;
+          cursor: pointer;
+          padding: 10px;
+          border: 1px solid $grey-light;
+          margin: 0;
+        }
+
+        .detail {
+          display: none;
+
+          &.show {
+            display: block;
+          }
+
+          li {
+            margin: 5px 0;
+          }
+        }
+      }
+
+      &.subscribe {
+        .detail {
+          display: block;
+          li {
+            float: left;
+            width: 25%;
+            a {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .copyright {
+      margin-top: 70px;
+      padding-top: 20px;
+      margin-bottom: 50px;
+      border-top: 2px solid $grey;
+      color: $grey;
+      font-size: 10px;
+
+    }
+  }
+
+  #mobile-menu {
+    // display: none;
+    // width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    .burger-button {
+      color: $light-font;
+      transition: 0.4s;
+      margin: 25px;
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      z-index: 3;
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      background-color: $light-font;
+      color: $dark-font;
+      padding: 20px;
+      overflow-y: auto;
+
+      &.show {
+        display: block;
+        left: 0;
+      }
+
+      .top {
+        @extend %flex;
+        @include prefix(align-items, center);
+        @include prefix(justify-content, space-between);
+        border-bottom: 2px solid $grey;
+        padding: 10px 0;
+
+        img {
+          height: 70px;
+        }
+
+        .close {
+          font-size: 50px;
+          color: $main-color;
+          font-weight: bold;
+        }
+      }
+
+      ul {
+        list-style-type: none;
+
+        a {
+          padding: 10px 15px;
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        &.main-nav {
+          margin-top: 20px;
+          a {
+            color: $dark-font;
+            padding: 10px 15px;
+            font-size: 24px;
+            font-weight: bold;
+          }
+        }
+
+        &.nd-nav {
+          margin-top: 20px;
+          border-top: 2px solid $grey-light;
+          padding: 20px 0;
+
+          li {
+            a {
+              color: $grey;
+
+              &.active {
+                color: $main-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

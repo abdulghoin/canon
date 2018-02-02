@@ -1,0 +1,43 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+body {
+	background-color: $main-bg;
+}
+
+.flex-align-center {
+	@extend %flex;
+	@include prefix(align-items, center);
+}
+
+.tag-label {
+	position: absolute;
+	top: 13px;
+	left: 13px;
+	border-radius: 30px;
+	padding: 3px 15px;
+	color: $light-font;
+	font-weight: bold;
+	font-size: 10px;
+
+	&.red {
+		background-color: $main-color;
+	}
+
+	&.grey {
+		background-color: $grey;
+	}
+}
+
+// .text-center {
+// 	text-align: center!important;
+// }
